@@ -1,0 +1,10 @@
+{
+    "project_name": "project_name",
+    "author_name": "Benjamin Vial",
+    "email": "benjamin.vial84@gmail.com",
+    "github_username": "benvial",
+    "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+    "description": "A short description of the project.",
+    "open_source_license": ["MIT", "BSD-3-Clause", "No license file"],
+    "python_interpreter": ["python3", "python"]
+}
