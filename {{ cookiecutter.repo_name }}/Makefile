@@ -55,7 +55,7 @@ req: testenv
 
 
 
-## Create a github repository
+## Create a github/gitlab repository
 repo:
 	git init
 	hub create $(PROJECT_NAME)
@@ -88,6 +88,19 @@ gh:
 
 ## Clean, reformat and push to github
 save: clean style gh
+
+less:
+	cd docs/_custom/static/css/less;\
+	lessc theme.less  ../theme.css;\
+	lessc custom_styles.less  ../custom_styles.css;\
+	lessc custom_gallery.less  ../custom_gallery.css;\
+	lessc custom_pygments.less  ../custom_pygments.css;\
+
+
+doc:
+	cd docs && make clean && make html
+
+styledoc: less doc
 
 #################################################################################
 # PROJECT RULES                                                                 #
