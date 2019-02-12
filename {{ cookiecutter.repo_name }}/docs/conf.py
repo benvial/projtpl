@@ -17,9 +17,8 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+
+
 # import sphinx_rtd_theme
 import sphinx_bootstrap_theme
 import sys
@@ -27,6 +26,9 @@ import os
 from datetime import date
 import sphinx_gallery
 import {{ cookiecutter.project_name }}
+
+
+
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -40,7 +42,7 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.autosummary',
     'sphinx.ext.doctest',
-    # 'sphinx.ext.linkcode',
+    'sphinx.ext.viewcode',
     'sphinx.ext.intersphinx',
     # 'sphinx.ext.todo',
     # 'sphinx.ext.coverage',
@@ -108,7 +110,7 @@ copyright = u"{}, {}".format(date.today().year,author)
 html_context = {
     'description': {{ cookiecutter.project_name }}.__description__,
     'show_gh_fork': True,
-    'ghrepo': u'benvial/{{ cookiecutter.repo_name }}',
+    'ghrepo': u"{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}",
     'show_pip_install': False,
     'piplink': ''
 }
@@ -154,8 +156,6 @@ html_static_path = ['_custom/static']
 
 
 def setup(app):
-    app.add_stylesheet(
-        'https://use.fontawesome.com/releases/v5.0.13/css/all.css')
     app.add_stylesheet('css/theme.css')
     app.add_stylesheet('css/custom_styles.css')
     app.add_stylesheet('css/custom_gallery.css')
@@ -343,7 +343,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, {{ cookiecutter.project_name }}.__name__ + '.tex', '{{ cookiecutter.project_name }} Documentation',
-     'Benjamin Vial', 'manual'),
+      {{ cookiecutter.project_name }}.__author__, 'manual'),
 ]
 
 
@@ -364,7 +364,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, '{{ cookiecutter.project_name }}', '{{ cookiecutter.project_name }} Documentation',
-     author, {{ cookiecutter.project_name }}.__name__, 'Python Electromagnetic Analysis and Simulation with the Finite Element Method',
+     author, {{ cookiecutter.project_name }}.__name__,  {{ cookiecutter.project_name }}.__description__,
      'Science/Engineering'),
 ]
 

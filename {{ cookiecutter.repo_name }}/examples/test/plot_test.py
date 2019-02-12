@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-PLoting a curve
+Ploting a curve
 ==========================================
 
 A dummy example
@@ -13,8 +13,8 @@ import matplotlib.pyplot as plt
 ##############################################################################
 # Some text
 
-x = np.linspace(0,2*np.pi, 300)
-y = np.sin(x)**2
+x = np.linspace(0, 2 * np.pi, 300)
+y = np.sin(x) ** 2
 
 ##############################################################################
 # And finally plot it:

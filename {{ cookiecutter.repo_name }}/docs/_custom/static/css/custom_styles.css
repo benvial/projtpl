@@ -400,3 +400,8 @@ input {
   display: none;
   padding: 13px;
 }
+
+
+.project-description {
+  font-size: 40pt;
+}

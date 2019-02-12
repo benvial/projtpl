@@ -2,8 +2,16 @@
 
 .. title:: Home
 
+.. raw:: html
+  
+  <div class="project-description">
+
 .. include:: ../README.rst
   :start-after: inclusion-marker-do-not-remove
+  
+.. raw:: html
+  
+  </div>
 
 .. raw:: html
   

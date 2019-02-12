@@ -3042,6 +3042,7 @@ fieldset[disabled] a.btn {
   color: @body-bg;
   background-color: #a198a4;
   border-color: #a198a4;
+    padding: 3px 12px;
 }
 .btn-default:focus,
 .btn-default.focus {
@@ -3423,7 +3424,7 @@ fieldset[disabled] .btn-link:focus {
 .btn-sm,
 .btn-group-sm > .btn {
   padding: 6px 9px;
-  font-size: @font-size-small;
+  font-size: ze-small;
   line-height: 1.5;
   border-radius: 3px;
 }
@@ -4445,8 +4446,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-bottom: 19px;
 }
 .navbar-text {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  // margin-top: 20px;
+  // margin-bottom: 20px;
+  font-size: @font-size-base;
 }
 @media (min-width: 768px) {
   .navbar-text {
@@ -4473,6 +4475,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-brand {
   color: @body-bg;
+  font-size: @font-size-base;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {

@@ -98,7 +98,7 @@ less:
 
 
 doc:
-	cd docs && make clean && make html
+	cd docs && make clean && sphinx-apidoc -f -o . ../$(PROJECT_NAME) && make html
 
 styledoc: less doc
 
