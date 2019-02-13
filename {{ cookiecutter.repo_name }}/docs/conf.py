@@ -111,8 +111,8 @@ html_context = {
     'description': {{ cookiecutter.project_name }}.__description__,
     'show_gh_fork': True,
     'ghrepo': u"{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}",
-    'show_pip_install': False,
-    'piplink': ''
+    'show_pip_install': True,
+    'pipname': "{{ cookiecutter.repo_name }}"
 }
 
 
@@ -299,7 +299,7 @@ html_sidebars = {'auto_examples/index': ['localtoc.html'],
 #html_show_sourcelink = True
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
-html_show_sphinx = True
+html_show_sphinx = False
 
 # If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
 html_show_copyright = True
