@@ -110,7 +110,7 @@ copyright = u"{}, {}".format(date.today().year,author)
 html_context = {
     'description': {{ cookiecutter.project_name }}.__description__,
     'show_gh_fork': True,
-    'ghrepo': u"{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}",
+    'ghrepo': u"{{ cookiecutter.git_host_username }}/{{ cookiecutter.repo_name }}",
     'show_pip_install': True,
     'pipname': "{{ cookiecutter.repo_name }}"
 }
@@ -280,7 +280,8 @@ html_favicon = ""
 # Custom sidebar templates, maps document names to template names.
 #html_sidebars = {}
 html_sidebars = {'auto_examples/index': ['localtoc.html'],
-                 'reference': ['localtoc.html']}
+                 'reference': ['localtoc.html'],
+                 '{{ cookiecutter.project_name }}*': ['localtoc.html']}
 # html_sidebars = {'examples': ['localtoc.html']}
 # Additional templates that should be rendered to pages, maps page names to
 # template names.

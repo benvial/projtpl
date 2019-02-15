@@ -8,7 +8,7 @@ json_tex ={
     "project_name": "{{ cookiecutter.project_name }}",
     "author_name": "{{ cookiecutter.author_name }}",
     "email": "{{ cookiecutter.email }}",
-    "github_username": "{{ cookiecutter.github_username }}",
+    "git_host_username": "{{ cookiecutter.git_host_username }}",
     "repo_name": "{{ cookiecutter.project_name }}",
     "description": "{{ cookiecutter.description }}",
     "_copy_without_render": ["custom.sty"]
@@ -36,4 +36,4 @@ os.system("mv tmp/{{ cookiecutter.project_name }} {}/reports/latex".format(PROJE
 os.system("rm -rf tmp")
 os.system("git clone https://github.com/benvial/jupyter_tools")
 os.system("mv jupyter_tools notebooks")
-os.system("rm -rf notebooks/.git notebooks/.gitignore notebooks/README.md" )
+os.system("rm -rf notebooks/.git notebooks/.gitignore" )
