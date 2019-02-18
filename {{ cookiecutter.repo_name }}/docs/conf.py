@@ -107,10 +107,15 @@ author = {{ cookiecutter.project_name }}.__author__
 copyright = u"{}, {}".format(date.today().year,author)
 
 
+host = "{{ cookiecutter.hosting }}"
+github = host == "github"
+
+
 html_context = {
     'description': {{ cookiecutter.project_name }}.__description__,
     'show_fork': True,
-    'ghrepo': u"{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}",
+    'github': github,
+    'repo': u"{{ cookiecutter.git_host_username }}/{{ cookiecutter.repo_name }}",
     'show_pip_install': True,
     'pipname': "{{ cookiecutter.repo_name }}"
 }
