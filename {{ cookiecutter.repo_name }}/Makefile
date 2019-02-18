@@ -9,6 +9,7 @@ SHELL := /bin/bash
 PROJECT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 PROJECT_NAME = {{ cookiecutter.repo_name }}
 PYTHON_INTERPRETER = {{ cookiecutter.python_interpreter }}
+HOSTING = {{ cookiecutter.hosting }}
 
 ifeq (,$(shell which conda))
 HAS_CONDA=False
@@ -55,12 +56,19 @@ req: testenv
 
 
 
-## Create a github/gitlab repository
+## Create a {{ cookiecutter.hosting }}/gitlab repository
 repo:
 	git init
+ifeq (github,$(HOSTING))
 	hub create $(PROJECT_NAME)
+else
+	python gitlab_create.py
+	git init
+	git remote add origin git@gitlab.com:qmaem/$(PROJECT_NAME).git
+endif
 
-## Initialize the project: create environment, install dependencies, and create repository on github
+
+## Initialize the project: create environment, install dependencies, and create repository on {{ cookiecutter.hosting }}
 init: env req repo
 
 ## Delete all compiled Python files
@@ -78,17 +86,18 @@ style:
 	black {{ cookiecutter.repo_name }}
 
 
-## Push to github
+## Push to {{ cookiecutter.hosting }}
 gh:
-	@echo "Pushing to github..."
+	@echo "Pushing to {{ cookiecutter.hosting }}..."
 	git add -A
 	@read -p "Enter commit message: " MSG; \
 	git commit -a -m "$$MSG"
 	git push origin master
 
-## Clean, reformat and push to github
+## Clean, reformat and push to {{ cookiecutter.hosting }}
 save: clean style gh
 
+## Make doc css
 less:
 	cd docs/_custom/static/css/less;\
 	lessc theme.less  ../theme.css;\
@@ -96,10 +105,11 @@ less:
 	lessc custom_gallery.less  ../custom_gallery.css;\
 	lessc custom_pygments.less  ../custom_pygments.css;\
 
-
+## Make html doc with Sphinx
 doc:
 	cd docs && make clean && sphinx-apidoc -f -o . ../$(PROJECT_NAME) && make html
 
+## Style and build html doc
 styledoc: less doc
 
 
