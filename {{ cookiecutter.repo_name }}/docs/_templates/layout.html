@@ -44,13 +44,20 @@
         </div>
       </div>
       {%- endif %}
-      {%- if show_gh_fork %}
+      {%- if show_fork %}
       <div class="col-md-4 text-center">
         <div class="foot-fa">
-          <a href=https://github.com/{{ghrepo}}>
-            <i class="fab fa-github fa-1x"></i>
-            fork me on github
-          </a>
+          {%- if show_fork %}
+            <a href=https://github.com/{{ghrepo}}>
+              <i class="fab fa-github fa-1x"></i>
+              fork me on github
+            </a>
+          {%- else %}
+            <a href=https://github.com/{{ghrepo}}>
+              <i class="fab fa-github fa-1x"></i>
+              fork me on github
+            </a>
+          {%- endif %}
         </div>
       </div>
       {%- endif %}

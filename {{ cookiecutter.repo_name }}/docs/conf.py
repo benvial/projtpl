@@ -109,7 +109,7 @@ copyright = u"{}, {}".format(date.today().year,author)
 
 html_context = {
     'description': {{ cookiecutter.project_name }}.__description__,
-    'show_gh_fork': True,
+    'show_fork': True,
     'ghrepo': u"{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}",
     'show_pip_install': True,
     'pipname': "{{ cookiecutter.repo_name }}"
