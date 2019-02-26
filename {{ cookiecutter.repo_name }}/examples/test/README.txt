@@ -1,4 +1,3 @@
-.. _material_examples:
 
 Test examples
 -----------------
