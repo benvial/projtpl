@@ -306,7 +306,6 @@ dd {
 }
 
 dl:not(.docutils) dt:first-child {
-  padding-left: @font-size-small;
   margin-top: 0;
 }
 
@@ -323,7 +322,7 @@ dl:not(.docutils) dl dt {
 }
 
 dl:not(.docutils) dt {
-  display: table;
+  display: inline-block;;
   margin: 5px 0;
   font-size: 90%;
   line-height: normal;
@@ -416,6 +415,10 @@ input {
   border-radius: 0;
   box-shadow: none;
   text-transform: uppercase;
+  border-radius: 0;
+  box-shadow: none;
+  font-family: @font-family-sans-serif;
+  text-shadow: None;
 }
 /* .btn-outline{
   background-color: transparent;

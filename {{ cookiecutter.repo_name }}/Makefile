@@ -106,11 +106,8 @@ less:
 	lessc custom_pygments.less  ../custom_pygments.css;\
 
 ## Make html doc with Sphinx
-doc:
+doc: less
 	cd docs && make clean && sphinx-apidoc -f -o . ../$(PROJECT_NAME) && make html
-
-## Style and build html doc
-styledoc: less doc
 
 
 ## run the test suite

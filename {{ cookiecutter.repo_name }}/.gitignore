@@ -83,3 +83,10 @@ target/
 # vim
 *.swp
 *.swo
+
+# doc and sphinx
+
+docs/gen_modules
+docs/_build
+docs/auto_examples
+docs/_custom/static/css/*.css

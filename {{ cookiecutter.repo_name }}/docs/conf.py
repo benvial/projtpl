@@ -58,8 +58,7 @@ extensions = [
 # see https://github.com/numpy/numpydoc/issues/69
 numpydoc_class_members_toctree = False
 
-autodoc_default_flags = ['members', 'inherited-members']
-
+autodoc_default_options = {"members": True, 'inherited-members': True}
 
 autosummary_generate = True
 
